@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+  <!--header section start -->
+  </div>
+  <!-- header section end -->
+  <!-- contact section start -->
+
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <h1 class="categories_text">Contact Us</h1>
+     
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="Name" name="name">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="Phone Numbar" name="phonenumber">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="email-bt" placeholder="Email Address" name="email">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="massage-bt" placeholder="Message" name="massage">
+                </div>
+                <div><input class="send_bt" type="submit" value="Send It"></div>
+              </form>   
+          </div>
+        </div>
+
+
+        <div class="col-md-6 ">
+          <div class="map_container">
+            <div class="map">
+              <iframe width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=ICICI%20Bank%20Ltd,%20Rajkot%20-%20Ayodhya%20Chowk.%20ICICI%20Bank%20Ltd.,%20Time%20Square,%2002%20Building,%20Ground%20Floor,%20Shop%20No%2003,%20New%20150%20Feet%20Ring%20Road,%20Ayodhya%20Chowk%20rajkot+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+              <a href='https://www.embed-map.net/'>Map</a>
+              <script type='text/javascript'
+                src='https://embedmaps.com/google-maps-authorization/script.js?id=027be07904daa1abcb3c11040b8c823b634ae487'></script>
+             </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- contact section end -->
+  <!-- footer section start -->
+<!-- WhatsApp btn start -->
+<script>
+  var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?88045';
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = url;
+  var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#00e785",
+      "ctaText":"Chat with us",
+      "borderRadius":"25",
+      "marginLeft": "0",
+      "marginRight": "20",
+      "marginBottom": "20",
+      "ctaIconWATI":false,
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Wati",
+      "brandSubTitle":"undefined",
+      "brandImg":"https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"Hello, %0A I have a question about {{page_link}}",
+      "backgroundColor":"#00e785",
+      "ctaText":"Chat with us",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"8347270447"
+  }
+  };
+  s.onload = function() {
+      CreateWhatsappChatWidget(options);
+  };
+  var x = document.getElementsByTagName('script')[0];
+  x.parentNode.insertBefore(s, x);
+</script>
+<!-- WhatsApp btn end -->
+</body>
+
+</html>
+{% endblock %}
